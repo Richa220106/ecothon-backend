@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const db = require('./database');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 
 app.use(cors());
@@ -106,4 +106,5 @@ app.post('/api/score-routes', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
 
